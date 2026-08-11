@@ -1,0 +1,2 @@
+# Relatorio
+Este documento, como parte do desenvolvimento deste trabalho, visa indicar as etapas de desenvolvimento do projeto e responder as questões cujo código não é capaz de responder por sí proprio, isto é, que nescessitem de argumentação por extenso.
