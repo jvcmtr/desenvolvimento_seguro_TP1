@@ -1,4 +1,5 @@
+from fastapi import FastAPI
+from src.routes import router
 
-
-def main():
-    print("ola")
+app = FastAPI()
+app.include_router(router)

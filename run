@@ -1,4 +1,14 @@
-from src.main import main
+import uvicorn
+
+DEFAULT_HOST = "127.0.0.1"
+DEFAULT_PORT = 8080 
+USE_AUTO_RELOAD = True
+
 
 if __name__ == "__main__":
-    main()
+    uvicorn.run(
+        "src.main:app",
+        host=DEFAULT_HOST,
+        port=DEFAULT_PORT,
+        reload=USE_AUTO_RELOAD,
+    )
