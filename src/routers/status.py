@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
-router = APIRouter()
+router = APIRouter(prefix="/status")
 
 @router.get("/")
-def home():
+def get():
     return "App ativo"

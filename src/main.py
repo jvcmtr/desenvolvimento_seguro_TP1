@@ -1,5 +1,9 @@
 from fastapi import FastAPI
-from src.routes import router
+from src.routers.status import router as STATUS_ROUTER
+from src.routers.eventos import router as EVENTOS_ROUTER
 
 app = FastAPI()
-app.include_router(router)
+
+# ROUTERS
+app.include_router(STATUS_ROUTER)
+app.include_router(EVENTOS_ROUTER)
