@@ -17,3 +17,7 @@ Evidencias da configuração do hot-reload incluem:
 
 ## Exercício 2.3
 Separar os routers de uma API REST por recurso facilita a divisão da solução em modulos independentes. Mantendo os endpoints e seus modelos relacionados proximos ao mesmo tempo em que os isola dos demais recursos, mantendo a objetividade do codigo e a separação de responsabilidades.
+
+## Exercicio 3.3
+O response model define a assinatura do endpoint, isto é, o contrato/formato da resposta JSON enviada. Se especificarmos um response model que não possui alguma propriedade (como token de auditoria) este dado não será 
+retornado na resposta da API.

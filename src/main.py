@@ -1,6 +1,6 @@
 from fastapi import FastAPI
-from src.routers.status import router as STATUS_ROUTER
-from src.routers.eventos import router as EVENTOS_ROUTER
+from src.API.status_controller import router as STATUS_ROUTER
+from src.API.eventos_controller import router as EVENTOS_ROUTER
 
 app = FastAPI()
 
