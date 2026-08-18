@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+    <title>Eventos</title>
+    <style>
+        body {
+            background-color: #aaaaff;
+            display: flex;
+            flex-direction: column;
+            gap: 5vw;
+            align-items: center;
+            justify-content: center;
+        }
+        .card {
+            border-radius: 1rem;
+            padding: 1rem;
+            background-color: #fff;
+            border: 1px solid #20202080;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Listar Eventos:</h1>
+    {% for evento in eventos %}
+        <div class="card">
+            <h2>{{ evento.nome }}</h2>
+            <p><strong>Descrição:</strong> {{ evento.descricao }}</p>
+            <p><strong>Organizador:</strong> {{ evento.organizador }}</p>
+        </div>
+    {% endfor %}
+
+</body>
+</html>

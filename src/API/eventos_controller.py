@@ -1,10 +1,12 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, HTTPException, Request
 from pydantic import BaseModel
+from fastapi.templating import Jinja2Templates
 
 from src.models.eventos_model import Evento
 import src.DAL.eventos_repository as repos
 
 router = APIRouter(prefix="/eventos")
+templates = Jinja2Templates(directory="src/views")
 
 # Mesmo com a separação em camadas, ainda é interessante manter os DTOs exclusivos da camada de 
 # aplicação e definição dos endpoints separados dos demais modelos 
@@ -29,6 +31,16 @@ def create_evento(ev: EventoCreate):
 
     repos.eventos.append(evento)
     return evento
+
+
+# O ideal seria separar as views dos endpoints que trabalham puramente com respostas dados, 
+@router.get("/html")
+def listar_eventos_html(request: Request):
+    return templates.TemplateResponse(
+        request=request,
+        name="listar_eventos.html",
+        context={"eventos": repos.eventos},
+    )
 
 @router.get("/", response_model=list[Evento])
 def get_all_eventos():
