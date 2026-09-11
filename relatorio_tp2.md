@@ -92,4 +92,6 @@ Elevation of Privilege  | Camada de Autenticação e Autorização (*Ainda não 
 ---
 
 # Exercício 3
-![Clique aqui para acessar o arquivo /recursos_relatorio/tp2/threat_model.md](/recursos_relatorio/tp2/threat_model.md)
+> *O arquivo requerido pela questão pode ser encontrado em `/recursos_relatorio/tp2/` ou acessando o link abaixo*
+
+![Clique aqui para acessar o arquivo threat_model.md](/recursos_relatorio/tp2/threat_model.md)
