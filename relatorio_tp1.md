@@ -1,8 +1,8 @@
 # Relatorio
-Este documento, como parte do desenvolvimento deste trabalho, visa indicar as etapas de desenvolvimento do projeto e responder as questões cujo código não é capaz de responder por sí proprio, isto é, que nescessitem de argumentação por extenso.
+Este documento, como parte do desenvolvimento do TP1, visa indicar as etapas de desenvolvimento do projeto e responder as questões cujo código não é capaz de responder por sí proprio, isto é, que nescessitem de argumentação por extenso.
 
 
-> **TODOS OS PRINTS REFERENCIADOS NESTE RELATÓRIO PODEM SER ENCONTRADOS DENTRO DA PASTA `/recursos_relatorio`**
+> **TODOS OS PRINTS REFERENCIADOS NESTE RELATÓRIO PODEM SER ENCONTRADOS DENTRO DA PASTA `/recursos_relatorio/tp1`**
 
 
 ## Exercício 1
@@ -10,9 +10,9 @@ Um passo a passo para o setup do ambiente virtual e da instalação das dependen
 
 Para executar o programa, basta rodar o comando `python3 run` dentro do ambiente virtual e com as dependencias instaladas. As configurações do uvicorn podem ser encontradas no arquivo `run`
 
-Evidencias da configuração do hot-reload incluem:
-- `recursos_relatorio/q1_hot-reload.png` 
-- `recursos_relatorio/q1_status.png` 
+Evidencias da configuração do hot-reload incluem: 
+![q1_hot-reload.png](/recursos_relatorio/tp1/q1_hot-reload.png)
+![q1_status.png](/recursos_relatorio/tp1/q1_status.png)
 
 
 ## Exercício 2.3
