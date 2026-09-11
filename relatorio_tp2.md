@@ -78,8 +78,15 @@ Ranking de priorização por impacto e justificativa.
 ---
 
 # Exercício 2
-![ANALIZE_STRIDE.csv](/recursos_relatorio/tp2/ANALIZE_STRIDE.csv)
 
-> *Caso o arquivo acima não seja adequadamente renderizado, é possivel verificar a tabela com as vulnerabilidades identificadas no arquivo `/recursos_relatorio/tp2/ANALIZE_STRIDE.csv`*
+Categoria STRIDE        | Componente                                                      | Ameaça Identificada
+| --- | --- | --- |
+Spoofing                | Rota de Criação de Evento                                       | "Forja de identidade ao preencher o campo `organizador` com dados de outro usuario."
+Denial of Service (DoS) | Rota de Criação de Evento                                       | "Realizar um volume massivo de chamadas a endpoints sem restrição de taxa (*rate limiting*) ou autenticação."
+Tampering               | Armazenamento                                                   | "Corrupção da integridade por conta de inconsistencia nos IDs de eventos se aproveitando da variavel global `latest_used_id`."
+Repudiation             | Armazenamento                                                   | "Impossibilidade de rastrear ou auditar quem inseriu determinado evento malicioso devido à ausência de logs no repositório."
+Information Disclosure  | View de Listagem HTML                                           | "Exposição de dados de sessão e cookies devido à injeção de JS via tag `<script>`."
+Elevation of Privilege  | Camada de Autenticação e Autorização (*Ainda não implementado*) | "Possibilidade de edição de eventos de terceiros caso o controle de acesso e validação de identidade não seja adequadamente implementado."
 
+![Clique aqui para ver o arquivo ANALIZE_STRIDE.csv](/recursos_relatorio/tp2/ANALIZE_STRIDE.csv)
 
