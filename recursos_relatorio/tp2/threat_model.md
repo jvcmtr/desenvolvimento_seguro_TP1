@@ -26,7 +26,7 @@ A interface de acesso ao repositório possui o modulo `src.DAL` como camada de a
 
 Com a futura implantação de um banco de dados como repositório da aplicação, o acesso ao banco se torna mais uma superfície de ataque.
 
-#### Ameaças identificadas (STRIDE)
+# Ameaças identificadas (STRIDE)
 Categoria STRIDE        |Componente                                                      |Ameaça Identificada|Proposta de mitigação 
 | --- | --- | --- | --- |
 Spoofing                |Rota de Criação de Evento                                       |"Forja de identidade ao preencher o campo `organizador` com dados de outro usuario."|"Implementar autenticação e preencher automaticamente os dados do organizador com as informações do usuário"
