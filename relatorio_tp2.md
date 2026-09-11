@@ -4,7 +4,7 @@ Este documento, como parte do desenvolvimento do TP2, visa indicar as etapas de 
 
 > **TODOS OS PRINTS REFERENCIADOS NESTE RELATÓRIO PODEM SER ENCONTRADOS DENTRO DA PASTA `/recursos_relatorio/tp2`**
 
-## Exercício 1
+# Exercício 1
 ### Item 1.1
 Lista de misuse cases:
 ---
@@ -74,3 +74,11 @@ Ranking de priorização por impacto e justificativa.
 - **3° Inconsistencia de dados** : Possui impacto menor *Negação de serviço* que viola a integridade do sistema, mas não o impede de funcionar. 
 
 - **4° Sobrecarga de rede :** Possui menor impacto no sistema do que *Negação de serviço* e *Inconsistencia de dados* já que degrada o serviço mas não o impede de funcionar nem prejudica sua integridade, é mais proximo de uma falha de otimização.
+
+---
+
+# Exercício 2
+![ANALIZE_STRIDE.csv](/recursos_relatorio/tp2/ANALIZE_STRIDE.csv)
+*Caso o arquivo acima não seja adequadamente renderizado, é possivel verificar a tabela com as vulnerabilidades identificadas no arquivo `/recursos_relatorio/tp2/ANALIZE_STRIDE.csv`*
+
+
