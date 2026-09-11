@@ -79,6 +79,7 @@ Ranking de priorização por impacto e justificativa.
 
 # Exercício 2
 ![ANALIZE_STRIDE.csv](/recursos_relatorio/tp2/ANALIZE_STRIDE.csv)
-*Caso o arquivo acima não seja adequadamente renderizado, é possivel verificar a tabela com as vulnerabilidades identificadas no arquivo `/recursos_relatorio/tp2/ANALIZE_STRIDE.csv`*
+
+> *Caso o arquivo acima não seja adequadamente renderizado, é possivel verificar a tabela com as vulnerabilidades identificadas no arquivo `/recursos_relatorio/tp2/ANALIZE_STRIDE.csv`*
 
 
