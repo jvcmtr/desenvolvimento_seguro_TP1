@@ -8,16 +8,19 @@ Para acessar a aplicação e documentação no estagio de entrega de cada teste 
 
 ## **API** *(routes)*
 `/src/API`
+
 Application Program Interface - Camada de alto nivel destinada a definir a interface do serviço. Contém as rotas e os endpoints fornescidos pelo programa.
 
 
 ## **Models**
 `/src/models`
+
 Modulo que contem as classes especificas da camada de dominio, isto é, as classes que correspondem às entidades e recursos do sistema. 
 
 
 ## **DAL** *(database)*
 `/src/DAL`
+
 Data Access Layer - Camada de destinada a abstrair a comunicação do sistema com um repositorio generico. Atualmente 
 esta camada é somente um mock, ou seja, nenhuma função foi implementada para abstrair a funcionalidade e o codigo acessa diretamente um array.
 
