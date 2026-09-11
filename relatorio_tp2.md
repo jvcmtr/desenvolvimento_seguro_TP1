@@ -8,36 +8,36 @@ Este documento, como parte do desenvolvimento do TP2, visa indicar as etapas de 
 ### Item 1.1
 Lista de misuse cases:
 ---
-#### Injeção de HTML ou JS arbitrário
-**Ator Malicioso:** Atacante externo
+#### INJEÇÃO DE JS ARBITRÁRIO
+- **Ator Malicioso:** Atacante externo
 
-**Ação Indesejada:** Injetar código JS dentro de uma tag `<script>` afim de fazer este código ser executado no navegador de outro usuario via `nome` ou `descrição` de um evento malicioso cadastrado pelo atacante.
+- **Ação Indesejada:** Injetar código JS dentro de uma tag `<script>` afim de fazer este código ser executado no navegador de outro usuario via `nome` ou `descrição` de um evento malicioso cadastrado pelo atacante.
 
-**Impacto Potencial:** O script pode ser executado no navegador de outro usuario ao ele acessar a rota `GET /eventos/html`, gerando possivel roubo de cookies, sessão, dados pessoais, dentre outros.
-
----
-#### Negação de serviço
-**Ator Malicioso:** Bot ou script gerado por atacante externo.
-
-**Ação Indesejada:** Realizar um volume massivo de chamadas a endpoints sem restrição de taxa (rate limiting) ou autenticação.
-
-**Impacto Potencial:** Queda de serviço por limite de memoria.
+- **Impacto Potencial:** O script pode ser executado no navegador de outro usuario ao ele acessar a rota `GET /eventos/html`, gerando possivel roubo de cookies, sessão, dados pessoais, dentre outros.
 
 ---
-#### Inconsistencia de dados
-**Ator Malicioso:** Bot ou script gerado por atacante externo.
+#### NEGAÇÃO DE SERVIÇO
+- **Ator Malicioso:** Bot ou script gerado por atacante externo.
 
-**Ação Indesejada:** Disparo de requisições paralelas em `POST /eventos`
+- **Ação Indesejada:** Realizar um volume massivo de chamadas a endpoints sem restrição de taxa (rate limiting) ou autenticação.
 
-**Impacto Potencial:** Gera inconsistencia nos IDs de eventos se aproveitando da variavel global `latest_used_id` podendo causar bugs e falhas em outros endpoints.
+- **Impacto Potencial:** Queda de serviço por limite de memoria.
 
 ---
-#### Sobrecarga de rede
-**Ator Malicioso:** Atacante malicioso.
+#### INCONSISTÊNCIA DE DADOS
+- **Ator Malicioso:** Bot ou script gerado por atacante externo.
 
-**Ação Indesejada:** Realização de chamadas repetidas ao endpoint `GET /eventos/`.
+- **Ação Indesejada:** Disparo de requisições paralelas em `POST /eventos`
 
-**Impacto Potencial:** Por falta de paginação ou rate-limiting no endpoint, ele é vulneravel a sobrecarga conforme a base de dados cresce. O tamanho da resposta do endpoint passa a ficar cada vez maior gerando sobrecarga na rede, tornando a API lenta.
+- **Impacto Potencial:** Gera inconsistencia nos IDs de eventos se aproveitando da variavel global `latest_used_id` podendo causar bugs e falhas em outros endpoints.
+
+---
+#### SOBRECARGA DE REDE
+- **Ator Malicioso:** Atacante malicioso.
+
+- **Ação Indesejada:** Realização de chamadas repetidas ao endpoint `GET /eventos/`.
+
+- **Impacto Potencial:** Por falta de paginação ou rate-limiting no endpoint, ele é vulneravel a sobrecarga conforme a base de dados cresce. O tamanho da resposta do endpoint passa a ficar cada vez maior gerando sobrecarga na rede, tornando a API lenta.
 
 ---
 
