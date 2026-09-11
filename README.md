@@ -32,3 +32,8 @@ Modulo que contem as classes especificas da camada de dominio, isto é, as class
 
 Data Access Layer - Camada de destinada a abstrair a comunicação do sistema com um repositorio generico. Atualmente 
 esta camada é somente um mock, ou seja, nenhuma função foi implementada para abstrair a funcionalidade e o codigo acessa diretamente um array.
+
+### **Views**
+`/src/viewa`
+
+Pasta contendo os templates jinja2 para renderização das paginas HTML.
