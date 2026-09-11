@@ -78,6 +78,7 @@ Ranking de priorização por impacto e justificativa.
 ---
 
 # Exercício 2
+![Clique aqui para ver o arquivo ANALIZE_STRIDE.csv](/recursos_relatorio/tp2/ANALIZE_STRIDE.csv)
 
 Categoria STRIDE        | Componente                                                      | Ameaça Identificada
 | --- | --- | --- |
@@ -88,5 +89,7 @@ Repudiation             | Armazenamento                                         
 Information Disclosure  | View de Listagem HTML                                           | "Exposição de dados de sessão e cookies devido à injeção de JS via tag `<script>`."
 Elevation of Privilege  | Camada de Autenticação e Autorização (*Ainda não implementado*) | "Possibilidade de edição de eventos de terceiros caso o controle de acesso e validação de identidade não seja adequadamente implementado."
 
-![Clique aqui para ver o arquivo ANALIZE_STRIDE.csv](/recursos_relatorio/tp2/ANALIZE_STRIDE.csv)
+---
 
+# Exercício 3
+![Clique aqui para acessar o arquivo /recursos_relatorio/tp2/threat_model.md](/recursos_relatorio/tp2/threat_model.md)
