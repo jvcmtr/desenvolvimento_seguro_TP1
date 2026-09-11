@@ -1,7 +1,7 @@
 # Desenvolvimento Seguro de Aplicações Web
 *Repositorio utilizado para o cumprimento dos testes de performance da disciplina de Desenvolvimento Seguro de Aplicações Web (2026.3T). Por João Ramos.*
 
-Para acessar a aplicação e documentação no estagio de entrega de cada teste de performance, acesse o branch relevante (Exemplo: branch `tp1` diz respeito as questões do TP1). Os relatorios exigidos em cada TP podem ser encontrados na raiz do projeto. graficos e prints e outros recursos exigidos no relatorio podem ser encontrados em `/recursos_relatorio/`. 
+Para acessar a aplicação e documentação no estagio de entrega de cada teste de performance, acesse o branch relevante (Exemplo: branch `tp1` diz respeito as questões do TP1). Os relatorios exigidos em cada TP podem ser encontrados na raiz do projeto. Graficos e prints e outros recursos exigidos no relatorio podem ser encontrados em `/recursos_relatorio/`. 
 
 ---
 # Modulos
@@ -28,7 +28,7 @@ esta camada é somente um mock, ou seja, nenhuma função foi implementada para 
 ---
 
 # Executando o projeto
-Para executar o projeto, siga o passo a passo disponível em `setup.py` e execute o seguinte comando:
+Para executar o projeto, siga o passo a passo disponível em `/setup.md` e execute o seguinte comando:
 ```
 python3 run 
 ``` 
