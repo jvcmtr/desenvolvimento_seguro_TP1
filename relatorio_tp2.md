@@ -97,7 +97,7 @@ Elevation of Privilege  | Camada de Autenticação e Autorização (*Ainda não 
 ![Clique aqui para acessar o arquivo threat_model.md](/recursos_relatorio/tp2/threat_model.md)
 
 # Exercício 4
-![EventosAPI_TrustBoundries.png](/recursos_relatorio/tp2/EventosAPI_TrustBoundries.png)
+![EventosAPI_TrustBoundries.jpg](/recursos_relatorio/tp2/EventosAPI_TrustBoundries.jpg)
 
 
 [Clique aqui para acessar o arquivo da imagem EventosAPI_TrustBoundries.png](/recursos_relatorio/tp2/EventosAPI_TrustBoundries.png)
