@@ -96,6 +96,8 @@ Elevation of Privilege  | Camada de Autenticação e Autorização (*Ainda não 
 
 ![Clique aqui para acessar o arquivo threat_model.md](/recursos_relatorio/tp2/threat_model.md)
 
+---
+
 # Exercício 4
 ![EventosAPI_TrustBoundries.jpg](/recursos_relatorio/tp2/EventosAPI_TrustBoundries.jpg)
 
@@ -104,4 +106,6 @@ Elevation of Privilege  | Camada de Autenticação e Autorização (*Ainda não 
 
 O diagrama acima demostra de forma abstraida as partições do sistema bem como o trafego de dados e as fronteiras de confiança entre os componentes do sistema. Juntamente com o documento ![threat_model.md](/recursos_relatorio/tp2/threat_model.md) podemos veríficar que as ameaças de *Spoofing*, *Denial of Service*, *Information Disclosure* e *Elevation of Privilege* ocorrem no cruzamento entre EventosAPI e o Cliente, Já que se aproveitam da falta de validação de identidade, *rate-limiting* e sanitização dos dados trafegados. Ao mesmo tempo, podemos verificar que Tampering e Repudiation ocorrem na fronteira entre EventosAPI e a camada de persistencia de dados, já que se aproveitam de falhas de implementação do sistema como o modelo de geração dos IDs e a falta de logs persistentes.
 
-**Vale a pena ressaltar que existe uma desconexão central nesta análize, isso porque o diagrama representa o sistema como ele *planeja* ser implementado (com autenticação, autorização e persistencia), enquanto a analize de modelagem de ameaças aponta as falhas que existem na implementação atual.**
+**⚠ Vale a pena ressaltar que existe uma desconexão central nesta análize, isso porque o diagrama representa o sistema como ele *planeja* ser implementado (com autenticação, autorização e persistencia), enquanto a analize de modelagem de ameaças aponta as falhas que existem na implementação atual.**
+
+---
