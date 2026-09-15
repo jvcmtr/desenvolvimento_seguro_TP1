@@ -1,22 +1,16 @@
-from fastapi import APIRouter, HTTPException, Request
+from fastapi import APIRouter, HTTPException, Request, Depends, status
 from pydantic import BaseModel
 from fastapi.templating import Jinja2Templates
 
 from src.models.eventos_model import Evento
+from src.models.user_model import User
+
 import src.DAL.eventos_repository as repos
+from src.API.DTOs.Eventos import EventoCreate, EventoUpdate
+from src.core.auth import get_current_user
 
 router = APIRouter(prefix="/eventos")
 templates = Jinja2Templates(directory="src/views")
-
-# Mesmo com a separação em camadas, ainda é interessante manter os DTOs exclusivos da camada de 
-# aplicação e definição dos endpoints separados dos demais modelos 
- 
-# DTO create
-class EventoCreate(BaseModel):
-    nome: str
-    descricao: str
-    organizador: str
-
 
 # Endpoints
 @router.post("/", response_model=Evento)
@@ -56,4 +50,33 @@ def get_evento(id: int):
         status_code=404,
         detail="NOT FOUND",
     )
+
+@router.put("/{id}", response_model=Evento)
+def update_evento(
+    id: int,
+    updated_evento: EventoUpdate,
+    current_user: User = Depends(get_current_user)
+):
+    evento = None
+    try:
+        # É preciso urgentemente melhorar o repositorio
+        evento = [e for e in repos.eventos if e.id == evento_id][0]
+    except:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Evento não encontrado"
+        )
+
+    if evento.organizador != current_user.username:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Acesso negado"
+        )
+
+    if updated_evento.nome is not None:
+        evento.nome = updated_evento.nome
+    if updated_evento.descricao is not None:
+        evento.descricao = updated_evento.descricao
+
+    return evento
 

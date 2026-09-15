@@ -8,6 +8,12 @@ eventos = [
         id=1,
         nome="Evento 1",
         descricao="lorem ipsum",
+        organizador="joaoramos",
+    ),
+    Evento(
+        id=2,
+        nome="Evento 2",
+        descricao="ESTE EVENTO NÃO PODE SER ALTERADO",
         organizador="João Cícero",
     )
 ]
