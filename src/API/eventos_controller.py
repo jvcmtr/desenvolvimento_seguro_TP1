@@ -53,7 +53,7 @@ def get_evento(id: int):
 
 @router.put("/{id}", response_model=Evento)
 def update_evento(
-    evento_id: int,
+    id: int,
     updated_evento: EventoUpdate,
     current_user: User = Depends(get_current_user)
 ):
