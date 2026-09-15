@@ -73,10 +73,10 @@ def update_evento(
             detail="Acesso negado"
         )
 
-    if dados_atualizacao.nome is not None:
-        evento.nome = dados_atualizacao.nome
-    if dados_atualizacao.descricao is not None:
-        evento.descricao = dados_atualizacao.descricao
+    if updated_evento.nome is not None:
+        evento.nome = updated_evento.nome
+    if updated_evento.descricao is not None:
+        evento.descricao = updated_evento.descricao
 
     return evento
 

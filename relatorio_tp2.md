@@ -109,3 +109,21 @@ O diagrama acima demostra de forma abstraida as partições do sistema bem como 
 **⚠ Vale a pena ressaltar que existe uma desconexão central nesta análize, isso porque o diagrama representa o sistema como ele *planeja* ser implementado (com autenticação, autorização e persistencia), enquanto a analize de modelagem de ameaças aponta as falhas que existem na implementação atual.**
 
 ---
+
+# Exercício 6
+Implementação de OAuth2PasswordBearer e endpoint de update de eventos. Demonstrando que o usuario que não criou o evento não é campaz de altera-lo.
+
+![/recursos_relatorio/tp2/evidencia_q6_1.png](/recursos_relatorio/tp2/evidencia_q6_1.png)
+***Imagem 1** (`evidencia_q6_1.png`): Estado da aplicação antes dos testes*
+
+![/recursos_relatorio/tp2/evidencia_q6_5.png](/recursos_relatorio/tp2/evidencia_q6_5.png)
+***Imagem 2** (`evidencia_q6_5.png`): Evidencia de login via swagger utilizando o usuario `joaoramos`*
+
+![/recursos_relatorio/tp2/evidencia_q6_3.png](/recursos_relatorio/tp2/evidencia_q6_3.png)
+***Imagem 3** (`evidencia_q6_3.png`): Tentativa de alterar o evento 1, cujo organizador é `joaoramos` **(Bem sucedido)***
+
+![/recursos_relatorio/tp2/evidencia_q6_2.png](/recursos_relatorio/tp2/evidencia_q6_2.png)
+***Imagem 4** (`evidencia_q6_2.png`): Tentativa de alterar o evento 2, cujo organizador é `João Cícero` **(Não autorizado)***
+
+![/recursos_relatorio/tp2/evidencia_q6_4.png](/recursos_relatorio/tp2/evidencia_q6_4.png)
+***Imagem 5** (`evidencia_q6_4.png`): Estado final da aplicação após os testes*

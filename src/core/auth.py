@@ -8,7 +8,7 @@ import src.DAL.user_repository as user_repos
 
 SECRET_KEY = "JOAO_RAMOS_CHAVE_SECRETA"
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE_MINUTES = 5
+ACCESS_TOKEN_EXPIRE_MINUTES = 30
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="auth/login")
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
