@@ -12,3 +12,9 @@ Execute o pip nas dependencias listadas em `requirements.txt`
 ```
 pip install -r requirements.txt
 ```
+
+## 3. Crie o banco de dados
+Execute o seguinte comando para gerar o arquivo de banco de dados:
+``` python
+python3 setup_db
+```
