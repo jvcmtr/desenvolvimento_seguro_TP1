@@ -2,6 +2,7 @@ from fastapi import FastAPI
 from src.API.status_controller import router as STATUS_ROUTER
 from src.API.eventos_controller import router as EVENTOS_ROUTER
 from src.API.auth_controller import router as AUTH_ROUTER
+from src.API.users_controller import router as USERS_ROUTER
 
 app = FastAPI()
 
@@ -9,3 +10,4 @@ app = FastAPI()
 app.include_router(STATUS_ROUTER)
 app.include_router(EVENTOS_ROUTER)
 app.include_router(AUTH_ROUTER)
+app.include_router(USERS_ROUTER)

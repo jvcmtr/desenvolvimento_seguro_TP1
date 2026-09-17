@@ -1,5 +1,6 @@
 from typing import List, Optional
 from sqlalchemy.orm import Session
+from sqlalchemy import text
 
 from src.DAL.db_models.eventos_table import EventoTable
 from src.models.eventos_model import Evento

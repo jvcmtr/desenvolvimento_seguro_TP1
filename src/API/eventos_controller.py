@@ -27,6 +27,18 @@ def create_evento(ev: EventoCreate, current_user = Depends(get_current_user), db
 
     return repos.create(db, ev)
 
+@router.get("/busca")
+def buscar_evento_por_nome(nome: str, db = Depends(get_db)):
+    QUERY_WHITELIST = r"abcdefghijklmnopqrstuvwxyz0123456789-=+[]{}:;.,/"
+    
+    for c in nome:
+        if c not in QUERY_WHITELIST:
+            raise HTTPException(
+                status_code=status.HTTP_400_BAD_REQUEST,
+                detail=f"Caractere inválido encontrado no input: {c}"
+            )
+    
+    return repos.search_by_name(db, nome)
 
 # O ideal seria separar as views dos endpoints que trabalham puramente com respostas dados, 
 @router.get("/html")
@@ -71,8 +83,3 @@ def update_evento(
             detail="Acesso negado"
         )
     repos.update(db, id, updated_evento)
-
-
-@router.get("/busca")
-def buscar_evento_por_nome(nome: str, db = Depends(get_db)):
-    return repos.search_by_name(db, nome)
