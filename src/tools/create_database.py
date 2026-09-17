@@ -28,7 +28,7 @@ def _get_user_and_password():
     
     return username, hash_pass(password)
 
-def _create_admin(usename, password):
+def _create_admin(username, password):
     db = Session()
     try:
         admin_user = UserTable(
@@ -39,8 +39,9 @@ def _create_admin(usename, password):
         db.add(admin_user)
         db.commit()
         print(f"+ usuário admin '{username}' criado")
+    except Exception as e:
+        print(f"+ Ocorreu um erro na criação de usuario: {e}")
     finally:
-        print("+ falha ao criar o usuário admin, delete o banco em `data/eventos_api.db` e tente novamente")
         db.close()
 
 def _create_new_db_file():

@@ -16,17 +16,16 @@ templates = Jinja2Templates(directory="src/views")
 
 # Endpoints
 @router.post("/", response_model=Evento)
-def create_evento(ev: EventoCreate, db = Depends(get_db)):
-    repos.latest_used_id += 1
-    evento = Evento(
-        id=repos.latest_used_id ,
-        nome=ev.nome,
-        descricao=ev.descricao,
-        organizador=ev.organizador
+def create_evento(ev: EventoCreate, current_user = Depends(get_current_user), db = Depends(get_db)):
+    
+    ev = Evento(
+        id = None,
+        nome = ev.nome,
+        descricao = ev.descricao,
+        organizador = current_user.username
     )
 
-    repos.create(db, evento)
-    return evento
+    return repos.create(db, ev)
 
 
 # O ideal seria separar as views dos endpoints que trabalham puramente com respostas dados, 

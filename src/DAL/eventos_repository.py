@@ -2,7 +2,7 @@ from typing import List, Optional
 from sqlalchemy.orm import Session
 
 from src.DAL.db_models.eventos_table import EventoTable
-from src.API.DTOs.Eventos import EventoCreate, EventoUpdate
+from src.models.eventos_model import Evento
 
 def get_all(db: Session) -> List[EventoTable]:
     return db.query(EventoTable).all()
@@ -10,7 +10,7 @@ def get_all(db: Session) -> List[EventoTable]:
 def get_by_id(db: Session, evento_id: int) -> Optional[EventoTable]:
     return db.query(EventoTable).filter(EventoTable.id == evento_id).first()
 
-def create(db: Session, ev: EventoCreate) -> EventoTable:
+def create(db: Session, ev: Evento) -> EventoTable:
     novo_evento = EventoTable(
         nome=ev.nome,
         descricao=ev.descricao,
@@ -21,7 +21,7 @@ def create(db: Session, ev: EventoCreate) -> EventoTable:
     db.refresh(novo_evento)
     return novo_evento
 
-def update(db: Session, evento_id: int, updated_evento: EventoUpdate) -> Optional[EventoTable]:
+def update(db: Session, evento_id: int, updated_evento: Evento) -> Optional[EventoTable]:
     evento = get_by_id(db, evento_id)
     if not evento:
         return None

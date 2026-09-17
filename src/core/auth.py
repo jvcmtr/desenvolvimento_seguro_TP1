@@ -5,6 +5,7 @@ from fastapi.security import OAuth2PasswordBearer
 
 from datetime import datetime, timedelta, timezone
 import src.DAL.user_repository as user_repos
+from src.DAL.database import get_db
 
 SECRET_KEY = "JOAO_RAMOS_CHAVE_SECRETA"
 ALGORITHM = "HS256"
@@ -27,7 +28,7 @@ def create_access_token(data):
     return jwt.encode(to_encode, SECRET_KEY, algorithm=ALGORITHM)
 
 
-def get_current_user(token: str = Depends(oauth2_scheme)):
+def get_current_user(token: str = Depends(oauth2_scheme), db = Depends(get_db)):
     credentials_exception = HTTPException(
         status_code=status.HTTP_401_UNAUTHORIZED,
         detail="Não autorizado",
@@ -41,7 +42,7 @@ def get_current_user(token: str = Depends(oauth2_scheme)):
     except jwt.PyJWTError:
         raise credentials_exception
 
-    user = user_repos.find_by_username(username)
+    user = user_repos.find_by_username(db, username)
     if user is None:
         raise credentials_exception
     return user
