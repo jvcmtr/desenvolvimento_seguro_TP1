@@ -1,13 +1,17 @@
 from passlib.context import CryptContext
 
+
 pwd_context = CryptContext(
     schemes=["bcrypt"],
     deprecated="auto"
 )
 
-password = input("Senha: ")
-hashed = pwd_context.hash(password)
+def hash_pass(input):
+    return pwd_context.hash(password)
 
-print("\nHash:")
-print('"' + hashed + '"')
-joaoramosadminsenha123
+if __name__ == "__main__":
+    password = input("Senha: ")
+    hashed = hash(password)
+
+    print("\nHash:")
+    print('"' + hashed + '"')

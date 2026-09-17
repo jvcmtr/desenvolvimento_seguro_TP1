@@ -6,7 +6,6 @@ from pydantic import BaseModel
 class EventoCreate(BaseModel):
     nome: str
     descricao: str
-    organizador: str
 
 class EventoUpdate(BaseModel):
     nome: str | None = None
